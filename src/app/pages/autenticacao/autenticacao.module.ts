@@ -1,5 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { ApiService } from './../../shared/services/api.service';
+import { AutenticacaoService } from './autenticacao.service';
 
 import { AutenticacaoRoutingModule } from './autenticacao-routing.module';
 import { AutenticacaoComponent } from './autenticacao.component';
@@ -11,7 +14,9 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
   declarations: [AutenticacaoComponent, LoginComponent, NaoEncontradoComponent],
   imports: [
     CommonModule,
-    AutenticacaoRoutingModule
-  ]
+    AutenticacaoRoutingModule,
+    HttpClientModule
+  ],
+  providers: [AutenticacaoService, ApiService]
 })
 export class AutenticacaoModule { }
